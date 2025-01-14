@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social - Road to Full Stack QA</title>
+    <style>
+        /* Base styles from reference */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation styles */
+        .header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 20px;
+        }
+
+        .site-title {
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        .nav-list {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+
+        .nav-list a:hover {
+            color: #0d6efd;
+        }
+
+        /* Main content styles */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Slider Section Styles */
+        .slider-section {
+            margin: 40px 0;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .slider-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+        }
+
+        .slide {
+            min-width: calc(33.333% - 20px);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .slide-blog {
+            min-width: calc(42.333% - 20px);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Specific styles for embedded content */
+        .video-slide {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
+
+        .linkedin-post {
+            width: 100%;
+            height: 400px;
+            /* Adjust height as needed */
+            object-fit: cover;
+            /* Ensures the image fills the tile without distortion */
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .blog-post {
+            width: 100%;
+            height: 600px;
+            /* Adjust height as needed */
+            object-fit: cover;
+            /* Ensures the image fills the tile without distortion */
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .blog-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .slide h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .slide p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0b5ed7;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #0d6efd;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slider-arrow.prev {
+            left: 0;
+        }
+
+        .slider-arrow.next {
+            right: 0;
+        }
+
+        /* Featured Sessions Styles */
+        .featured-sessions {
+            margin: 30px 0;
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .featured-sessions h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .featured-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .featured-link {
+            color: #0d6efd;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #0d6efd;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .featured-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <a href="/" class="site-title">Road to Full Stack QA</a>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses & resources.html">Courses & Free Resources</a></li>
+            <li><a href="social_media.html">Social</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- YouTube Videos Section -->
+        <section class="slider-section">
+            <h2>Latest YouTube Videos</h2>
+            <button class="slider-arrow prev" onclick="slideContent('videos', 'prev')">&#8249;</button>
+            <button class="slider-arrow next" onclick="slideContent('videos', 'next')">&#8250;</button>
+            <div class="slider-container">
+                <div class="slider-track" id="videos-track">
+                    <div class="slide">
+                        <iframe class="video-slide"
+                            src="https://www.youtube.com/embed/6WMcewx2Hh4?enablejsapi=1&controls=1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; microphone; payment"
+                            allowfullscreen>
+                        </iframe>
+                        <h4>Top 5 skills for SDETs for getting a CTC of 15 to 20 LPA</h4>
+                        <p>Guide for 2025</p>
+                    </div>
+                    <div class="slide">
+                        <iframe class="video-slide"
+                            src="https://www.youtube.com/embed/1nJ_oKr67oQ?enablejsapi=1&controls=1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; microphone; payment"
+                            allowfullscreen>
+                        </iframe>
+                        <h3>Decoding Interviewer Mindset</h3>
+                        <p>Essential tips for cracking interviews</p>
+                    </div>
+                    <div class="slide">
+                        <iframe class="video-slide"
+                            src="https://www.youtube.com/embed/cvGdwo6SNVE?enablejsapi=1&controls=1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; microphone; payment"
+                            allowfullscreen>
+                        </iframe>
+                        <h3>How to sustain even after 35+ rejections</h3>
+                        <p>Growth mindset for getting product companies</p>
+                    </div>
+                    <div class="slide">
+                        <iframe class="video-slide"
+                            src="https://www.youtube.com/embed/m8uRmtd27LI?enablejsapi=1&controls=1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; microphone; payment"
+                            allowfullscreen>
+                        </iframe>
+                        <h3>How to handle 90 or 60 days of notice period?</h3>
+                        <p>How to negotiate with Recruiters?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Videos -->
+        <div class="featured-sessions">
+            <h3>Featured Videos</h3>
+            <div class="featured-links">
+                <a href="https://youtube.com/shorts/vAf-_XQYEmc?si=nnWHIzDh55Sd6msc" class="featured-link">Rejections in Test Automation Interviews? Here's how you can avoid them!</a>
+                <a href="https://youtube.com/shorts/aKVltR3C5UE?si=rpAArwtGPCLCTz5z" class="featured-link">Why most SDETs are failing interviews, even after months of preparation?</a>
+                <a href="https://youtu.be/T-pJfh63Uvk?si=mqjZU40igt3vNfND" class="featured-link">30+ LPA Job as a Software Tester</a>
+                <a href="https://youtube.com/shorts/j09EVc1nwto?si=YErdOmJVWXNyAmis" class="featured-link">Finding jobs on LinkedIn in a smart way!</a>
+            </div>
+        </div>
+
+        <!-- LinkedIn Posts Section -->
+        <section class="slider-section">
+            <h2>LinkedIn Updates</h2>
+            <button class="slider-arrow prev" onclick="slideContent('linkedin', 'prev')">&#8249;</button>
+            <button class="slider-arrow next" onclick="slideContent('linkedin', 'next')">&#8250;</button>
+            <div class="slider-container">
+                <div class="slider-track" id="linkedin-track">
+                    <div class="slide">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7283339277919207426/"
+                            target="_blank">
+                            <img class="linkedin-post" src="assets/images/linkedIn_images/2.png" alt="LinkedIn Post" />
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7283339277919207426/"
+                            target="_blank">
+                            <img class="linkedin-post" src="assets/images/linkedIn_images/1.png" alt="LinkedIn Post" />
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7283339277919207426/"
+                            target="_blank">
+                            <img class="linkedin-post" src="assets/images/linkedIn_images/3.png" alt="LinkedIn Post" />
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7283339277919207426/"
+                            target="_blank">
+                            <img class="linkedin-post" src="assets/images/linkedIn_images/4.png" alt="LinkedIn Post" />
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7283339277919207426/"
+                            target="_blank">
+                            <img class="linkedin-post" src="assets/images/linkedIn_images/5.png" alt="LinkedIn Post" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured LinkedIn Posts -->
+        <div class="featured-sessions">
+            <h3>Featured Posts</h3>
+            <div class="featured-links">
+                <a href="https://www.linkedin.com/posts/japneet-sachdeva_sdet-interview-coding-qa-activity-7284064058297724932-uHY9" class="featured-link">SDET coding interview Q&A</a>
+                <a href="https://www.linkedin.com/posts/japneet-sachdeva_japneetsachdeva-activity-7281542439046205440-zqAs" class="featured-link">Why learning selenium-webdriver & java won't get you a job?</a>
+                <a href="https://www.linkedin.com/posts/japneet-sachdeva_become-sdet-in-2025-with-30-days-plan-activity-7278054468733095936-eV3f" class="featured-link">Become SDET in 30 days</a>
+                <a href="https://www.linkedin.com/posts/japneet-sachdeva_japneetsachdeva-activity-7276974898915225600-bfNW" class="featured-link">How stay ahead in QA for 2025</a>
+            </div>
+        </div>
+
+        <!-- Technical Blogs Section -->
+        <section class="slider-section">
+            <h2>Technical Blogs</h2>
+            <button class="slider-arrow prev" onclick="slideContent('blogs', 'prev')">&#8249;</button>
+            <button class="slider-arrow next" onclick="slideContent('blogs', 'next')">&#8250;</button>
+            <div class="slider-container">
+                <div class="slider-track" id="blogs-track">
+                    <div class="slide-blog blog-slide">
+                        <img class="blog-post" src="assets/images/blogs/blog_1.webp" alt="Blog 1" />
+                        <h3>AI Testing Strategy</h3>
+                        <p>Comprehensive guide to implementing AI testing in your projects.</p>
+                        <a href="https://medium.com/@japneetsachdeva/using-gen-ai-for-qa-activities-c814536d981c" class="btn">Read More</a>
+                    </div>
+                    <div class="slide-blog blog-slide">
+                        <img class="blog-post" src="assets/images/blogs/blog_3.webp" alt="Blog 2" />
+                        <h3>Explore & lLearn architecture based testing</h3>
+                        <p>Testing Microservices vs Monolithic.</p>
+                        <a href="https://medium.com/@japneetsachdeva/testing-microservices-vs-monolithic-995d2a374edb" class="btn">Read More</a>
+                    </div>
+                    <div class="slide-blog blog-slide">
+                        <img class="blog-post" src="assets/images/blogs/blog_4.webp" alt="Blog 3" />
+                        <h3>What is Mock Server</h3>
+                        <p>How to Mock a server for API Tests?</p>
+                        <a href="https://medium.com/@japneetsachdeva/what-is-mock-server-and-how-to-mock-a-server-for-api-tests-cc06c27b3e7f" class="btn">Read More</a>
+                    </div>
+                    <div class="slide-blog blog-slide">
+                        <img class="blog-post" src="assets/images/blogs/blog_5.webp" alt="Blog 4" />
+                        <h3>Load Testing using Locust</h3>
+                        <p>Easiest way to performance tests</p>
+                        <a href="https://medium.com/@japneetsachdeva/load-testing-using-locust-easiest-way-to-performance-tests-e71a3e21bd42" class="btn">Read More</a>
+                    </div>
+                    <div class="slide-blog blog-slide">
+                        <img class="blog-post" src="assets/images/blogs/blog_2.webp" alt="Blog 5" />
+                        <h3>JMeter for SQL DB Performance Testing</h3>
+                        <p>Setup Jmeter and execute performance tests for your SQL db.</p>
+                        <a href="https://medium.com/@japneetsachdeva/jmeter-for-sql-db-performance-testing-1d3dd54bc04d" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Featured Blogs -->
+        <div class="featured-sessions">
+            <h3>Featured Blogs</h3>
+            <div class="featured-links">
+                <a href="https://medium.com/@japneetsachdeva/smoke-testing-criticality-for-sdets-1d4350dc17e5" class="featured-link">Smoke Testing Breakdown for SDETs</a>
+                <a href="https://medium.com/@japneetsachdeva/front-end-testing-a-guide-for-2025-9122b919985e" class="featured-link">Front End Testing: A Guide for 2025</a>
+                <a href="https://medium.com/@japneetsachdeva/adversarial-testing-for-generative-ai-cd9d056ef979" class="featured-link">Adversarial Testing for Generative AI</a>
+                <a href="https://medium.com/@japneetsachdeva/naming-conventions-for-java-based-test-automation-framework-1da2870396dd" class="featured-link">Naming conventions for Automation Frameworks</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Japneet Sachdeva. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Slider functionality
+        const slidersState = {
+            videos: { currentSlide: 0 },
+            linkedin: { currentSlide: 0 },
+            blogs: { currentSlide: 0 }
+        };
+
+        function slideContent(sliderId, direction) {
+            const track = document.getElementById(`${sliderId}-track`);
+            const slides = track.children;
+            const slideWidth = slides[0].offsetWidth + 20; // Include gap
+            const maxSlides = slides.length - 3; // Show 3 slides at a time
+
+            if (direction === 'next' && slidersState[sliderId].currentSlide < maxSlides) {
+                slidersState[sliderId].currentSlide++;
+            } else if (direction === 'prev' && slidersState[sliderId].currentSlide > 0) {
+                slidersState[sliderId].currentSlide--;
+            }
+
+            const offset = -slidersState[sliderId].currentSlide * slideWidth;
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Initialize sliders
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add hover effects to slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+
+                slide.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

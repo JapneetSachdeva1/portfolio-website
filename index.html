@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japneet Sachdeva - Home</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation styles */
+        .header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 20px;
+        }
+        
+        .site-title {
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        
+        .nav-list {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-list li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+        
+        .nav-list a:hover {
+            color: #0d6efd;
+        }
+
+        /* Main content styles */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            margin-bottom: 40px;
+        }
+
+/* Featured Section Styles */
+.featured-section {
+  text-align: center;
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.featured-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Adjust according to your theme */
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: rolling 20s linear infinite;
+  width: calc(200% + 40px); /* Accommodates both sets of slides */
+  /* will-change: transform; */
+}
+
+.slide {
+  min-width: 120px; /* Adjust size of logos */
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Keyframes for Cyclic Motion */
+/* @keyframes rolling {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
+
+@keyframes rolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move to show the duplicate set */
+    }
+}
+
+
+
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .content-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .content-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* Professional Recommendations Styles */
+        .recommendations-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #eef2f7;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .recommendations-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .recommendations-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendations-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .recommendations-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .recommendations-slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .slider-controls button {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .slider-controls button:hover {
+            background: #0b5ed7;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Info Section Styles */
+.info-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-card {
+  flex: 1;
+  max-width: 30%;
+  background: #f9f9f9; /* Match your theme */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.info-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333; /* Match your theme */
+}
+
+.info-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li {
+  margin: 10px 0;
+}
+
+.info-card ul li a {
+  text-decoration: none;
+  color: #007bff; /* Match your theme */
+  font-weight: 500;
+}
+
+.info-card ul li a:hover {
+  text-decoration: underline;
+}
+
+.info-buttons {
+  margin-top: 20px;
+}
+
+.info-buttons .btn {
+  text-decoration: none;
+  color: white;
+  background: #007bff; /* Match your theme */
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.info-buttons .btn:hover {
+  background: #0056b3;
+}
+
+/* About Me Section Styles */
+.about-me-section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #f9f9f9; /* Match theme */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.about-me-profile {
+  text-align: center;
+  flex: 1;
+  max-width: 20%;
+}
+
+.about-me-profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;         /* Makes the image round */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;          /* Ensures image covers the area properly */
+    border: 3px solid #fff;     /* Optional: adds a white border */
+}
+
+/* Optional: Add hover effect */
+.about-me-profile img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333; /* Match theme */
+}
+
+.about-me-content {
+  flex: 2;
+  max-width: 50%;
+  text-align: left;
+}
+
+.about-me-content h2 {
+  font-size: 24px;
+  color: #333; /* Match theme */
+}
+
+.about-me-content p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-me-content a {
+  color: #007bff; /* Match theme */
+  text-decoration: none;
+}
+
+.about-me-content a:hover {
+  text-decoration: underline;
+}
+
+.connect-here {
+  flex: 1;
+  max-width: 25%;
+}
+
+.connect-here h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Match theme */
+}
+
+.connect-here ul {
+  list-style: none;
+  padding: 0;
+}
+
+.connect-here ul li {
+  margin: 10px 0;
+}
+
+.connect-here ul li a {
+  text-decoration: none;
+  color: #007bff; /* Match theme */
+}
+
+.connect-here ul li a:hover {
+  text-decoration: underline;
+}
+
+.connect-here .btn {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: #007bff; /* Match theme */
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.connect-here .btn:hover {
+  background: #0056b3;
+}
+
+.about-me-quote {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.about-me-quote p {
+  font-size: 16px;
+  font-style: italic;
+  color: #555; /* Match theme */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <a href="/" class="site-title">Road to Full Stack QA</a>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses & resources.html">Courses & Free Resources</a></li>
+            <li><a href="social_media.html">Social</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1>Welcome to Japneet's Road to Full Stack QA</h1>
+            <p>Your one-stop destination for software testing knowledge, QA, test automation, AI, Modelling, Context driven testing, resources, and training.</p>
+        </section>
+
+<!-- Featured Section -->
+<div class="featured-section">
+    <h4>Featured with</h4>
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- Add as many slides as needed -->
+        <div class="about-me-profile"><img src="assets/images/icons/1.png" alt="Placeholder 1"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/2.png" alt="Placeholder 2"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/3.png" alt="Placeholder 3"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/4.png" alt="Placeholder 4"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/5.png" alt="Placeholder 5"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/6.png" alt="Placeholder 6"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/7.png" alt="Placeholder 7"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/8.png" alt="Placeholder 5"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/9.png" alt="Placeholder 6"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/10.png" alt="Placeholder 7"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/11.png" alt="Placeholder 6"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/13.png" alt="Placeholder 5"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/14.png" alt="Placeholder 6"></div>
+        <div class="about-me-profile"><img src="assets/images/icons/15.png" alt="Placeholder 7"></div>
+                <!-- Duplicate slides for smooth looping -->
+                <div class="about-me-profile"><img src="assets/images/icons/1.png" alt="Placeholder 1"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/2.png" alt="Placeholder 2"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/3.png" alt="Placeholder 3"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/4.png" alt="Placeholder 4"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/5.png" alt="Placeholder 5"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/6.png" alt="Placeholder 6"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/7.png" alt="Placeholder 7"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/8.png" alt="Placeholder 5"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/9.png" alt="Placeholder 6"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/10.png" alt="Placeholder 7"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/11.png" alt="Placeholder 6"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/13.png" alt="Placeholder 5"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/14.png" alt="Placeholder 6"></div>
+                <div class="about-me-profile"><img src="assets/images/icons/15.png" alt="Placeholder 7"></div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+        <div class="content-grid">
+            <!-- Featured Course -->
+            <div class="content-card">
+                <img src="assets/images/placeholdercourse.png" alt="Featured Course">
+                <h3>Latest Course</h3>
+                <p>Master software testing with our comprehensive courses.</p>
+                <a href="courses & resources.html" class="btn">View Courses</a>
+            </div>
+
+            <!-- LinkedIn Updates -->
+            <div class="content-card">
+                <img src="assets/images/placeholder-linkedin.png" alt="LinkedIn Updates">
+                <h3>LinkedIn Updates</h3>
+                <p>Stay connected with our latest professional insights.</p>
+                <a href="https://www.linkedin.com/in/japneet-sachdeva/" class="btn">Connect on LinkedIn</a>
+            </div>
+
+            <!-- YouTube Content -->
+            <div class="content-card">
+                <img src="assets/images/placeholder-youtube.png" alt="YouTube Content">
+                <h3>Latest Videos</h3>
+                <p>Watch our educational content on software testing.</p>
+                <a href="https://www.youtube.com/@IamJapneetSachdeva" class="btn">Watch Videos</a>
+            </div>
+        </div>
+  
+
+        <!-- Professional Recommendations -->
+        <section class="recommendations-section">
+            <h2>Professional Recommendations</h2>
+            <div class="recommendations-container">
+                <div class="recommendations-slider" id="slider">
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/1.jpg" alt="Recommendation 1">
+                    </div>
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/8.jpg" alt="Recommendation 1">
+                    </div>
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/2.jpg" alt="Recommendation 2">
+                    </div>
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/3.jpg" alt="Recommendation 3">
+                    </div>
+
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/4.jpg" alt="Recommendation 3">
+                    </div>
+
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/5.jpg" alt="Recommendation 3">
+                    </div>
+
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/6.jpg" alt="Recommendation 3">
+                    </div>
+
+                    <div class="recommendations-slide">
+                        <img src="assets/images/reviews/7.jpg" alt="Recommendation 3">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button onclick="prevSlide()">&#8249;</button>
+                <button onclick="nextSlide()">&#8250;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Me Section -->
+<div class="about-me-section">
+    <div class="about-me-container">
+      <div class="about-me-profile">
+        <img src="assets/images/profile_picture/1.png" alt="Profile Picture" />
+        <p class="profile-name">Japneet Sachdeva</p>
+      </div>
+      <div class="about-me-content">
+        <h2>About Me</h2>
+        <p>
+            Japneet Sachdeva’s journey in software testing is one of innovation and continuous learning. Starting with manual testing, he mastered the art of automation to enhance quality and efficiency. At Wipro, he reduced manual effort by 20% and developed automation suites for critical systems. His expertise flourished further at Think Future Technologies, where he led QA efforts, onboarded clients, and executed 2,000+ parallel tests. At Lavu POS, he created end-to-end frameworks, automated 80% of workflows, and introduced Docker-based shift-left testing.
+
+            Japneet’s story is a testament to his passion for testing, blending creativity, and advanced tools to ensure top-tier software quality.
+          <a href="#">Read more</a>.
+        </p>
+        <p>
+          Read more here -> <a href="about.html">here</a>.
+        </p>
+      </div>
+      <div class="connect-here">
+        <h2>Connect Here 🤝</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/japneet-sachdeva/">LinkedIn – Professional Updates</a></li>
+          <li><a href="https://www.youtube.com/@IamJapneetSachdeva">YouTube – Testing & Tech</a></li>
+          <li><a href="https://www.instagram.com/sachdeva_japneet">Instagram – Testing Bits</a></li>
+          <li><a href="https://topmate.io/japneet_sachdeva/110838">Book a 1-1 Call – Let’s Talk</a></li>
+          <li><a href="https://japneetsachdeva.gumroad.com/">Books – Trending Skills</a></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/japneet-sachdeva/" class="btn">Follow on LinkedIn</a>
+        <p>Email me here: <a href="mailto:askjapneetsachdeva@gmail.com">askjapneetsachdeva@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="about-me-quote">
+      <p><em>“Most important skills today that are hardly taught:
+        - Humour
+        - Storytelling
+        - Managing money
+        - Human psychology
+        - Context Driven 
+        - Growth Driven”</em> – Daily Habits by Japneet Sachdeva</p>
+    </div>
+  </div>
+  
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Japneet Sachdeva. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for dynamic content loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add hover effect to cards
+            document.querySelectorAll('.content-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+        // Ensure continuous cyclic motion
+const featuredTrack = document.querySelector('.slider-track'); // Renamed from 'sliderTrack'
+const featuredSlides = Array.from(document.querySelectorAll('.slide')); // Renamed from 'slides'
+
+// Clone slides for smooth looping
+featuredSlides.forEach((slide) => {
+  const clone = slide.cloneNode(true);
+  featuredTrack.appendChild(clone);
+});
+
+
+        // Image playback functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.recommendations-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const slider = document.getElementById('slider');
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        setInterval(nextSlide, 5000); // Auto-play every 5 seconds
+    </script>
+
+<script
+src="https://topmate-embed.s3.ap-south-1.amazonaws.com/v1/topmate-embed.js"
+user-profile="https://topmate.io/embed/profile/japneet_sachdeva?theme=D5534D"
+btn-style='{"backgroundColor":"#000","color":"#fff","border":"1px solid #000"}'
+embed-version="v1"
+button-text="Let's Connect"
+position-right="30px"
+position-bottom="30px"
+custom-padding="0px"
+custom-font-size="16px"
+custom-font-weight="500"
+custom-width="200px"
+async=""
+defer=""
+></script>  
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Resources - Road to Full Stack QA</title>
+    <style>
+        /* Base styles from reference */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation styles */
+        .header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 20px;
+        }
+        
+        .site-title {
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        
+        .nav-list {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-list li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+        
+        .nav-list a:hover {
+            color: #0d6efd;
+        }
+
+        /* Main content styles */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Slider Section Styles */
+        .slider-section {
+            margin: 40px 0;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .slider-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: calc(33.333% - 20px);
+            margin: 0 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .slide h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .slide p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0b5ed7;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #0d6efd;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slider-arrow.prev {
+            left: 0;
+        }
+
+        .slider-arrow.next {
+            right: 0;
+        }
+
+        /* Featured Sessions Styles */
+        .featured-sessions {
+            margin: 30px 0;
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .featured-sessions h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .featured-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .featured-link {
+            color: #0d6efd;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #0d6efd;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .featured-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        
+        .blog-post {
+            width: 100%;
+            height: 900px;
+            /* Adjust height as needed */
+            object-fit: cover;
+            /* Ensures the image fills the tile without distortion */
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <a href="/" class="site-title">Road to Full Stack QA</a>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses & resources.html">Courses & Free Resources</a></li>
+            <li><a href="social_media.html">Social</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Courses Section -->
+        <section class="slider-section">
+            <h2>Courses</h2>
+            <button class="slider-arrow prev" onclick="slideContent('courses', 'prev')">&#8249;</button>
+            <button class="slider-arrow next" onclick="slideContent('courses', 'next')">&#8250;</button>
+            <div class="slider-container">
+                <div class="slider-track" id="courses-track">
+                    <div class="slide">
+                        <img class="blog-post" src="assets/images/courses/1.png" alt="course_1">
+                        <h3>Job Guarantee Program</h3>
+                        <p>Most comprehensive course for SDETs from QA to Automation</p>
+                        <a href="https://topmate.io/japneet_sachdeva/1352249" class="btn">Learn More</a>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/courses/2.png" alt="Automation Course">
+                        <h3>Become SDET in 2025 with 30 days Course</h3>
+                        <p>Clear & Precise RoadMap for Upcoming SDETs in 2025</p>
+                        <a href="https://topmate.io/japneet_sachdeva/1354423" class="btn">Learn More</a>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/courses/3.png" alt="API Testing Course">
+                        <h3>Become Proficient Automation Tester with CI/CD</h3>
+                        <p>Create Industry Level Framewoek using - Docker, GitHub Actions, E2E CI/CD, Java, Latest Selenium-WebDriver etc.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/courses/4.png" alt="Performance Testing">
+                        <h3>Prepare for SDET interviews from scratch</h3>
+                        <p>Question Bank with answers for SDETs + DSA + Practice skills</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Course Sessions -->
+        <div class="featured-sessions">
+            <h3>Featured Sessions</h3>
+            <div class="featured-links">
+                <a href="https://topmate.io/japneet_sachdeva/110838" class="featured-link">Career guidance/ Direction less..?</a>
+                <a href="https://topmate.io/japneet_sachdeva/838854" class="featured-link">Resume Review with ATS Friendly Resume Template</a>
+                <a href="https://topmate.io/japneet_sachdeva/110836" class="featured-link">Have a question?</a>
+            </div>
+        </div>
+
+        <!-- Resources Section -->
+        <section class="slider-section">
+            <h2>Resources</h2>
+            <button class="slider-arrow prev" onclick="slideContent('resources', 'prev')">&#8249;</button>
+            <button class="slider-arrow next" onclick="slideContent('resources', 'next')">&#8250;</button>
+            <div class="slider-container">
+                <div class="slider-track" id="resources-track">
+                    <div class="slide">
+                        <h3>Rest-Assured Mindmap from scratch</h3>
+                        <p>API Test Automation</p>
+                        <a href="https://drive.google.com/file/d/1-IIiycihorI1AMmnaCvB9dcftLabCZkN/view?usp=drive_link" class="btn">Access</a>
+                    </div>
+                    <div class="slide">
+                        <h3>Master Selenium WebDriver</h3>
+                        <p>Comprehensive mind-map for Selenium WebDriver 2025</p>
+                        <a href="https://drive.google.com/file/d/1wq1cZ8kC2WtbYz3ovx2JEg-3_T0CKo0_/view?usp=drive_link" class="btn">Access</a>
+                    </div>
+                    <div class="slide">
+                        <h3>Java for SDET Interviews</h3>
+                        <p>Java mind-map from beginner to advance</p>
+                        <a href="https://drive.google.com/file/d/184kqhMKzScrzcCqe8o30O3uFmWPrhJp9/view?usp=sharing" class="btn">Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resource Sessions -->
+        <div class="featured-sessions">
+            <h3>Featured Resources</h3>
+            <div class="featured-links">
+                <a href="https://restfulapi.net/http-status-codes/" class="featured-link">HTTP status code complete guide</a>
+                <a href="https://japneetsachdeva.gumroad.com/l/genai" class="featured-link">Learn and Use GEN AI with ChatGPT/Gemini/Claude AI for SDETs</a>
+                <a href="https://japneetsachdeva.gumroad.com/l/apis" class="featured-link">API Test Automation E-Book for RestAssured & JAVA with Framework Creation from Scratch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Japneet Sachdeva. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Slider functionality
+        const slidersState = {
+            courses: { currentSlide: 0 },
+            resources: { currentSlide: 0 }
+        };
+
+        function slideContent(sliderId, direction) {
+            const track = document.getElementById(`${sliderId}-track`);
+            const slides = track.children;
+            const slideWidth = slides[0].offsetWidth + 20; // Include margin
+            const maxSlides = slides.length - 3; // Show 3 slides at a time
+
+            if (direction === 'next' && slidersState[sliderId].currentSlide < maxSlides) {
+                slidersState[sliderId].currentSlide++;
+            } else if (direction === 'prev' && slidersState[sliderId].currentSlide > 0) {
+                slidersState[sliderId].currentSlide--;
+            }
+
+            const offset = -slidersState[sliderId].currentSlide * slideWidth;
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Initialize sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+
+                slide.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
