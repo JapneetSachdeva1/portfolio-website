@@ -51,6 +51,8 @@ This repository hosts a modern and feature-rich portfolio website designed to sh
 ## **How to Use**
 1. Clone this repository: git clone <repository-url>
 
+## Note: The code does not contain assets, and has inline CSS & Javascript code. You can update it as per your needs.
+
 Contact
 Have feedback or want to collaborate? Reach out via:
 
